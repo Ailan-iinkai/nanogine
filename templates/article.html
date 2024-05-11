@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>News Titles</title>
+</head>
+<body>
+    <h1>タイトル一覧</h1>
+    <ul>
+        {% for title in article_titles %}
+            <li>{{ title }}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

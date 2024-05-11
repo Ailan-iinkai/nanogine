@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Your Page Title</title>
+  <!-- 追加のCSSやメタ情報などをここに記述 -->
+</head>
+
+<body>
+  <header>
+    <h1>Your Website Title</h1>
+    <!-- ページのヘッダー部分に関する要素 -->
+  </header>
+
+  <nav>
+    <ul>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <!-- ナビゲーションメニューに関する要素 -->
+  </nav>
+
+  <main>
+    <section id="home">
+      <h2>Home</h2>
+      <p>Welcome to our website!</p>
+      <!-- ページのメインコンテンツに関する要素 -->
+    </section>
+
+    <div id="data-container"></div>
+
+    <!-- // JSONデータを取得 -->
+    <script>
+    var jsonData = {{ data|safe }};
+        
+    <!-- // JSONデータを表示 -->
+    document.getElementById('data-container').innerText = JSON.stringify(jsonData, null, 2);
+    </script>
+    <section id="about">
+      <h2>About Us</h2>
+      <p>Learn more about our company.</p>
+      <!-- ページのメインコンテンツに関する要素 -->
+    </section>
+
+    <section id="contact">
+      <h2>Contact Us</h2>
+      <p>Feel free to reach out to us.</p>
+      <!-- ページのメインコンテンツに関する要素 -->
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2024 Your Company</p>
+    <!-- ページのフッター部分に関する要素 -->
+  </footer>
+
+  <!-- 追加のJavaScriptなどのスクリプトをここに記述 -->
+</body>
+
+</html>

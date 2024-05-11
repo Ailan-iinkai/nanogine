@@ -1,0 +1,11 @@
+janome
+requests
+BeautifulSoup4
+openai==0.28
+numpy
+Flask
+pyyaml
+tiktoken
+scikit-learn
+scipy
+python-dotenv

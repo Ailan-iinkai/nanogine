@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tag Buttons</title>
+<style>
+    /* CSS スタイル */
+    .tag-button {
+        display: inline-block;
+        background-color: #ddd;
+        padding: 5px 10px;
+        border-radius: 5px;
+        margin-right: 10px;
+        cursor: pointer;
+    }
+
+    .tag-button.selected {
+        background-color: #007bff;
+        color: white;
+    }
+
+    .sub-tag {
+        margin-left: 20px;
+        display: none;
+    }
+
+    #commit-button {
+        display: none;
+        background-color: #007bff;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+</style>
+</head>
+<body>
+
+<h2>興味のあるタグを選択してください</h2>
+
+<div id="tag-buttons">
+    <span class="tag-button" data-tag="python">Python</span>
+    <span class="tag-button" data-tag="javascript">JavaScript</span>
+    <span class="tag-button" data-tag="html">HTML</span>
+</div>
+
+<div id="sub-tags">
+    <div class="sub-tag" data-parent-tag="python">
+        <span class="tag-button">Django</span>
+        <span class="tag-button">pip</span>
+        <span class="tag-button">PyPI</span>
+    </div>
+    <div class="sub-tag" data-parent-tag="javascript">
+        <span class="tag-button">React</span>
+        <span class="tag-button">Vue.js</span>
+        <span class="tag-button">Node.js</span>
+    </div>
+    <div class="sub-tag" data-parent-tag="html">
+        <span class="tag-button">CSS</span>
+        <span class="tag-button">Bootstrap</span>
+        <span class="tag-button">SVG</span>
+    </div>
+</div>
+
+<button id="commit-button">ニュース取得!!</button>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+    // JavaScript コード
+    $(document).ready(function() {
+        // タグボタンがクリックされたときの処理
+        $('.tag-button').click(function() {
+            var tag = $(this).data('tag');
+            // 選択されたボタンのスタイルを変更
+            $('.tag-button').removeClass('selected');
+            $(this).addClass('selected');
+            // 選択されたタグに関連するサブタグを表示
+            $('.sub-tag').hide();
+            $('[data-parent-tag="' + tag + '"]').show();
+            // コミットボタンを表示
+            $('#commit-button').show();
+        });
+
+        // コミットボタンがクリックされたときの処理
+        $('#commit-button').click(function() {
+            alert('ニュースを取得しました！');
+        });
+    });
+</script>
+
+</body>
+</html>
