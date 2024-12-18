@@ -1,2 +1,2 @@
 # nanogine
-"IN" ha "INrann" no in!!! 
+ユーザーに関心のあるITニュースを収集し、要約を出力するローカルwebサーバー
